@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ICALL RYUICHI</title>
+
+<!-- ICON CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+:root {
+  --text: #f9fafb;
+  --sub: #9ca3af;
+  --btn: #1f2937;
+  --accent: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  overflow: hidden;
+
+  background: linear-gradient(
+    -45deg,
+    #020617,
+    #0b0f14,
+    #111827,
+    #020617
+  );
+  background-size: 400% 400%;
+  animation: bgMove 14s ease infinite;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* GLOW */
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.12), transparent 40%);
+  z-index: -1;
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 26px;
+  text-align: center;
+  position: relative;
+
+  background: rgba(17, 24, 39, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.65);
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* FOTO */
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+h1 {
+  font-size: 22px;
+  margin: 10px 0 6px;
+}
+
+.bio {
+  font-size: 14px;
+  color: var(--sub);
+  margin-bottom: 25px;
+}
+
+/* LINKS */
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--btn);
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.links a i {
+  font-size: 18px;
+  width: 22px;
+  text-align: center;
+}
+
+.links a:hover {
+  background: var(--accent);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 22px;
+  font-size: 12px;
+  color: var(--sub);
+}
+
+/* Link waktu */
+#currentTime {
+  display: block;
+  margin-top: 20px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+
+  <!-- MUSIC -->
+  <button class="music-btn" onclick="toggleMusic()">
+    <i id="musicIcon" class="fas fa-play"></i>
+  </button>
+
+  <audio id="music" loop>
+    <source src="https://files.catbox.moe/nlbd9u.mp3" type="audio/mpeg" />
+  </audio>
+
+  <img class="avatar" src="https://files.catbox.moe/ztqbp5.webp" alt="foto" />
+
+  <h1>SATORU BUG</h1>
+
+  <div class="bio">
+    ALL SOSMED<br />
+    klik link di bawah 👇
+  </div>
+
+  <div class="links">
+    <a href="https://instagram.com/raldhxx" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://tiktok.com/@siraldd" target="_blank">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+    <a href="https://github.com/tzyylima" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="/cdn-cgi/l/email-protection#f39681979a94969e919f9c9d94b3949e929a9fdd909c9e">
+      <i class="fas fa-envelope"></i> Gmail
+    </a>
+    <a href="https://wa.me/6285143104226" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="https://t.me/nusatoru2" target="_blank">
+      <i class="fab fa-telegram"></i> Telegram
+    </a>
+    <a href="https://whatsapp.com/channel/0029VbC5KvC6WaKf7sOZPk1p" target="_blank">
+      <i class="fab fa-whatsapp"></i> Saluran WhatsApp
+    </a>
+    <a href="https://t.me/testixinfocall" target="_blank">
+      <i class="fab fa-telegram"></i> Saluran Telegram
+    </a>
+  </div>
+
+  <div class="footer">
+    © 2025 • dibuat oleh SATORU BUG WA
+  </div>
+
+  <!-- Link waktu -->
+  <a
+    id="currentTime"
+    href="https://time.is/"
+    target="_blank"
+    rel="noopener noreferrer"
+    >Loading time...</a
+  >
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+  const music = document.getElementById("music");
+  const icon = document.getElementById("musicIcon");
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      icon.className = "fas fa-pause";
+    } else {
+      music.pause();
+      icon.className = "fas fa-play";
+    }
+  }
+
+  function showTime() {
+    const timeLink = document.getElementById("currentTime");
+    timeLink.textContent = new Date().toUTCString();
+  }
+  showTime();
+  setInterval(showTime, 1000);
+</script>
+
+</body>
+</html>
